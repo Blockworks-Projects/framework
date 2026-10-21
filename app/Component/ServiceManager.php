@@ -190,15 +190,15 @@ class ServiceManager implements EventsAwareInterface
                 {
                     continue;
                 }
-
+                
                 if ($exclude && in_array(str_replace('.php', '', $file), $excludeServices))
                 {
                     continue;
                 }
-
+                
                 // Registering server "$file"
                 $return = include_once $directory . $file;
-
+                
                 //if (is_callable($return))
                 {
                     // Register service

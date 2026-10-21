@@ -38,7 +38,7 @@ trait InternalQueryTrait
     public function executeQuery(): Simple
     {
         return $this->query->execute();
-
+        
         //return $this->query ? $this->query->execute()->toArray() : [];
     }
     

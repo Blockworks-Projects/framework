@@ -45,7 +45,7 @@ class Cities
                        ->execute()
                        ->toArray() ?: [];
         }
-
+        
         return [];
     }
     */

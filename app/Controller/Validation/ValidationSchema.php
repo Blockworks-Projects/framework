@@ -35,7 +35,7 @@ interface ValidationSchema
 /**
  * Example:
  *
-
+ 
  class LoginValidation
      extends Validation
      implements ValidationSchema
@@ -77,7 +77,7 @@ interface ValidationSchema
                      ]
                  )
              );
-
+ 
      }
  }
  */
