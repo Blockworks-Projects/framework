@@ -1,6 +1,6 @@
 <?php
 
-use Phalcon\Crypt;
+use Phalcon\Encryption\Crypt;
 
 /**
  * https://www.dvlpr.de

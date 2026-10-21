@@ -65,7 +65,7 @@ return function (\DS\Interfaces\GeneralApplication $application, Phalcon\Di\Fact
     )->convert(
         'action',
         function ($action) {
-            return Phalcon\Text::camelize($action);
+            return (new \Phalcon\Support\Helper\Str\Camelize())($action);
         }
     );
 
@@ -110,8 +110,9 @@ return function (\DS\Interfaces\GeneralApplication $application, Phalcon\Di\Fact
                 "dispatch:beforeExecuteRoute",
                 function ($event, PhDispatcher $dispatcher) use ($di) {
                     // Enable camelized routes, so like my-route is transformed to MyRoute.
-                    $actionName     = \Phalcon\Text::camelize($dispatcher->getActionName());
-                    $controllerName = \Phalcon\Text::camelize($dispatcher->getControllerName());
+                    $camelize       = new \Phalcon\Support\Helper\Str\Camelize();
+                    $actionName     = $camelize($dispatcher->getActionName());
+                    $controllerName = $camelize($dispatcher->getControllerName());
                     $dispatcher->setActionName($actionName);
                     $dispatcher->setControllerName($controllerName);
 

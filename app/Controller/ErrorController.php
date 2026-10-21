@@ -2,7 +2,6 @@
 
 namespace DS\Controller;
 
-use DS\Component\ServiceManager;
 use Phalcon\Mvc\Controller as PhalconMvcController;
 
 /**

@@ -2,7 +2,7 @@
 
 namespace DS\Exceptions;
 
-use Phalcon\Exception;
+use Exception;
 
 /**
  * https://www.dvlpr.de

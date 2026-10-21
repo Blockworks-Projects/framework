@@ -1,8 +1,6 @@
 <?php
 namespace DS\Component;
 
-use Phalcon\Di;
-
 /**
  * DS-Framework
  *
@@ -16,7 +14,7 @@ use Phalcon\Di;
  * @package   DS\Component
  */
 abstract class DiInjection
-    implements Di\InjectionAwareInterface
+    implements \Phalcon\Di\InjectionAwareInterface
 {
     use \DS\Traits\DiInjection;
 }

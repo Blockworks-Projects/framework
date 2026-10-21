@@ -3,7 +3,7 @@
 namespace DS\Exceptions;
 
 use DS\Model\User;
-use Phalcon\Exception;
+use Exception;
 
 /**
  * https://www.dvlpr.de

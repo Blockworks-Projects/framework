@@ -5,12 +5,12 @@ namespace DS;
 use DS\Component\ServiceManager;
 use DS\Constants\Services;
 use DS\Controller\ApiController;
-use Phalcon\Config;
-use Phalcon\DI\FactoryDefault;
+use Phalcon\Config\Config;
+use Phalcon\Di\FactoryDefault;
 use Phalcon\Di\FactoryDefault\Cli;
 use Phalcon\Events\Manager;
 use Phalcon\Http\Response;
-use Phalcon\Loader;
+use Phalcon\Autoload\Loader;
 
 final class Initializer
 {
@@ -83,7 +83,7 @@ final class Initializer
             // Setting default timezone to PST
             date_default_timezone_set('America/Los_Angeles');
 
-            if (!class_exists('Phalcon\Config'))
+            if (!class_exists('Phalcon\Config\Config'))
             {
                 throw new \ErrorException('Phalcon is not installed!');
             }
@@ -110,7 +110,7 @@ final class Initializer
 
             // Register an autoloader
             $di['loader'] = new Loader();
-            $di['loader']->registerNamespaces((array)$config->get('dirs'))->register();
+            $di['loader']->setNamespaces((array)$config->get('dirs'))->register();
 
             // Attach config as a service
             $di[Services::CONFIG] = $config;

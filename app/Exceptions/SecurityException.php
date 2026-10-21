@@ -1,7 +1,7 @@
 <?php
 namespace DS\Exceptions;
 
-use Phalcon\Exception;
+use Exception;
 
 /**
  * DS-Framework

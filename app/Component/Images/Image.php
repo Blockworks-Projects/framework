@@ -4,7 +4,7 @@ namespace DS\Component\Images;
 
 use DS\Application;
 use Phalcon\Di\AbstractInjectionAware;
-use Phalcon\Exception;
+use Exception;
 
 /**
  * DS-Framework

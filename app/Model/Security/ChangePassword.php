@@ -8,7 +8,7 @@ use DS\Component\ServiceManager;
 use DS\Exceptions\SecurityException;
 use DS\Model\User;
 use DS\Traits\DiSingleton;
-use Phalcon\Exception;
+use Exception;
 
 /**
  * Coders

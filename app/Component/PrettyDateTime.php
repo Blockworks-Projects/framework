@@ -1,8 +1,6 @@
 <?php
 namespace DS\Component;
 
-use DS\Application;
-
 /**
  * DS-Framework
  *
@@ -72,7 +70,7 @@ class PrettyDateTime
      * @return string The date in human readable format
      * @throws \Exception
      */
-    public static function day(\DateTime $dateTime, \DateTime $reference = null, $daysOnly = false)
+    public static function day(\DateTime $dateTime, ?\DateTime $reference = null, $daysOnly = false)
     {
         // If not provided, set $reference to the current DateTime
         if (!$reference)
@@ -163,7 +161,7 @@ class PrettyDateTime
      * @return string The date in human readable format
      * @throws \Exception
      */
-    public static function parse(\DateTime $dateTime, \DateTime $reference = null)
+    public static function parse(\DateTime $dateTime, ?\DateTime $reference = null)
     {
         // If not provided, set $reference to the current DateTime
         if (!$reference)

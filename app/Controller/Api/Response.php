@@ -3,7 +3,7 @@ namespace DS\Controller\Api;
 
 use DS\Component\DiInjection;
 use DS\Controller\Api\Meta\Error;
-use Phalcon\Di;
+use Phalcon\Di\Di;
 use Phalcon\Http\Response as HttpResponse;
 
 /**

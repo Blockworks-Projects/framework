@@ -119,7 +119,7 @@ class Services
     /**
      * Mailer service
      *
-     * @definition bootstrap/Services/Mailer.php
+     * @definition registered by the application
      */
     const MAILER = 'mailer';
 

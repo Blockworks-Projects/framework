@@ -16,11 +16,11 @@ namespace DS\Component\Links;
 abstract class AbstractLink
 {
     /**
-     * @return \Phalcon\DiInterface
+     * @return \Phalcon\Di\DiInterface
      */
     protected static function getDi()
     {
-        return \Phalcon\Di::getDefault();
+        return \Phalcon\Di\Di::getDefault();
     }
 
     /**

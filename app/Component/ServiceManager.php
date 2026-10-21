@@ -6,16 +6,14 @@ use Aws\AutoScaling\AutoScalingClient;
 use Aws\Sqs\SqsClient;
 use DiscordWebhooks\Client;
 use DS\Component\Filesystem\Flysystem\DsFlysystemAdapterInterface;
-use DS\Component\ProviderLogic\Api\SendGrid\SendGrid;
 use DS\Component\Slack\Slack;
 use DS\Component\Text\Url;
 use DS\Component\Twitter\TwitterApi;
 use DS\Component\View\Breadcrumbs\Breadcrumbs;
 use DS\Interfaces\GeneralApplication;
-use DS\Traits\EventsAwareTrait;
 use Phalcon\Cache\Adapter\AdapterInterface;
-use Phalcon\Config;
-use Phalcon\Di;
+use Phalcon\Config\Config;
+use Phalcon\Di\Di;
 use Phalcon\Events\EventsAwareInterface;
 use Phalcon\Events\Manager;
 use Phalcon\Events\ManagerInterface;
@@ -36,17 +34,16 @@ use Phalcon\Http\Response\Cookies;
  * @package   DS\Component
  *
  * @method Config getConfig()
- * @method \Phalcon\Logger getLogger()
- * @method \Phalcon\Logger getErrorLogger()
- * @method \Phalcon\Logger getCliLogger()
+ * @method \Phalcon\Logger\Logger getLogger()
+ * @method \Phalcon\Logger\Logger getErrorLogger()
+ * @method \Phalcon\Logger\Logger getCliLogger()
  * @method \DS\Component\Auth getAuth()
- * @method \Phalcon\Queue\Beanstalk\Extended getBeanstalk()
  * @method \DS\Component\Cache\Memcache getMemcache()
  * @method \DS\Component\Cache\Redis getRedis()
  * @method \Phalcon\Http\Request getRequest()
  * @method \Phalcon\Mvc\Model\MetaData\Redis getModelsMetadata()
  * @method \DS\Model\Manager\CachedReusableModelsManager getModelsManager()
- * @method \Phalcon\Crypt getCrypt()
+ * @method \Phalcon\Encryption\Crypt getCrypt()
  * @method \Phalcon\Db\Profiler getProfiler()
  * @method \DS\Component\Intl getIntl()
  * @method \DS\Component\Queue\Bernard\BernardQueue getQueue()
@@ -63,8 +60,7 @@ use Phalcon\Http\Response\Cookies;
  * @method DsFlysystemAdapterInterface getFiles();
  * @method Cookies getCookies();
  * @method TwitterApi getTwitter();
- * @method SendGrid getSendgrid();
- * @method \Phalcon\Security getSecurity();
+ * @method \Phalcon\Encryption\Security getSecurity();
  * @method \DS\Component\Analytics\Mixpanel getMixpanel();
  * @method \DS\Component\Queue\Bernard\BernardQueue getBernard();
  * @method Breadcrumbs getBreadcrumbs()
@@ -121,7 +117,7 @@ class ServiceManager implements EventsAwareInterface
      *
      * @param Di $dependencyInjector
      */
-    public function setDI(\Phalcon\DiInterface $dependencyInjector)
+    public function setDI(\Phalcon\Di\DiInterface $dependencyInjector)
     {
         $this->di = $dependencyInjector;
         
@@ -159,7 +155,7 @@ class ServiceManager implements EventsAwareInterface
      *
      * @return ServiceManager
      */
-    public static function instance(Di $dependencyInjector = null): ServiceManager
+    public static function instance(?Di $dependencyInjector = null): ServiceManager
     {
         if (!self::$instance)
         {
@@ -193,15 +189,15 @@ class ServiceManager implements EventsAwareInterface
                 {
                     continue;
                 }
-                
+
                 if ($exclude && in_array(str_replace('.php', '', $file), $excludeServices))
                 {
                     continue;
                 }
-                
+
                 // Registering server "$file"
                 $return = include_once $directory . $file;
-                
+
                 //if (is_callable($return))
                 {
                     // Register service
@@ -232,9 +228,9 @@ class ServiceManager implements EventsAwareInterface
     /**
      * DiInjection constructor.
      *
-     * @param Di|\Phalcon\DiInterface $dependencyInjector
+     * @param Di|\Phalcon\Di\DiInterface $dependencyInjector
      */
-    public function __construct(Di $dependencyInjector = null)
+    public function __construct(?Di $dependencyInjector = null)
     {
         if ($dependencyInjector)
         {

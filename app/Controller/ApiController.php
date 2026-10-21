@@ -13,9 +13,9 @@ use DS\Exceptions\ApiException;
 use DS\Exceptions\ApiNeedsLoginException;
 use DS\Exceptions\ApiRouteNotFoundException;
 use DS\Model\DataSource\ErrorCodes;
-use Phalcon\Di;
+use Phalcon\Di\Di;
 use Phalcon\Http\Request;
-use Phalcon\Logger;
+use Phalcon\Logger\Logger;
 
 /**
  * DS
@@ -28,7 +28,7 @@ use Phalcon\Logger;
  * @property \Phalcon\Http\Request request
  * @property \Phalcon\Http\Response response
  *
- * @method Di\FactoryDefault getDi()
+ * @method \Phalcon\Di\FactoryDefault getDi()
  */
 class ApiController
     extends BaseController

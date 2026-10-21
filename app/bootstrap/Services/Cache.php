@@ -22,7 +22,7 @@ return function (\DS\Interfaces\GeneralApplication $application, Phalcon\Di\Fact
      *
      * if (!isset($config['memcache']))
      * {
-     * throw new \Phalcon\Exception('Error. Memcache service is used but there is no configuration.');
+     * throw new \Exception('Error. Memcache service is used but there is no configuration.');
      * }
      *
      * return new \DS\Component\Cache\Memcache(
@@ -43,7 +43,7 @@ return function (\DS\Interfaces\GeneralApplication $application, Phalcon\Di\Fact
 
             if (!isset($config['redis']))
             {
-                throw new \Phalcon\Exception('Error. Invalid redis configuration.');
+                throw new \Exception('Error. Invalid redis configuration.');
             }
 
             return new \DS\Component\Cache\Redis(

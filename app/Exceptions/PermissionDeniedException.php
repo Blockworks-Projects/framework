@@ -2,7 +2,7 @@
 
 namespace DS\Exceptions;
 
-use Phalcon\Exception;
+use Exception;
 
 /**
  * DS-Framework
@@ -30,7 +30,7 @@ class PermissionDeniedException extends Exception
      * @param int            $code
      * @param \Throwable|null $previous
      */
-    public function __construct($userRoleThatFailed, string $message = "", string $field = '', int $code = 0, \Throwable $previous = null)
+    public function __construct($userRoleThatFailed, string $message = "", string $field = '', int $code = 0, ?\Throwable $previous = null)
     {
         parent::__construct($message, $code, $previous);
 
