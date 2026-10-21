@@ -2,6 +2,8 @@
 
 namespace DS\Controller;
 
+use Exception;
+
 /**
  * DS-Framework
  *

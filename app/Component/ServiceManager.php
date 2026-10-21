@@ -11,6 +11,7 @@ use DS\Component\Text\Url;
 use DS\Component\Twitter\TwitterApi;
 use DS\Component\View\Breadcrumbs\Breadcrumbs;
 use DS\Interfaces\GeneralApplication;
+use DS\Traits\EventsAwareTrait;
 use Phalcon\Cache\Adapter\AdapterInterface;
 use Phalcon\Config\Config;
 use Phalcon\Di\Di;

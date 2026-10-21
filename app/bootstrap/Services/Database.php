@@ -10,6 +10,8 @@
 
 use DS\Component\Phql\SqlDialects\GroupConcatDialect as GroupConcatDialect;
 use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
+use Phalcon\Events\Event;
+use Phalcon\Events\Manager as EventsManager;
 
 /**
  * @param \DS\Interfaces\GeneralApplication $application

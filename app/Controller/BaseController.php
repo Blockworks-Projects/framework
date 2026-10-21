@@ -8,6 +8,7 @@ use DS\Controller\Validation\ValidationSchema;
 use DS\Exceptions\CsrfTokenMismatchException;
 use DS\Exceptions\CsrfTokenMissingException;
 use DS\Exceptions\FormValidationException;
+use DS\Exceptions\PermissionDeniedException;
 use DS\Exceptions\RuntimeException;
 use DS\Exceptions\UserBlockedException;
 use Exception;
