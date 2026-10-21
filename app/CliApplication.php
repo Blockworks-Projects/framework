@@ -7,11 +7,11 @@ use DS\Component\ServiceManager;
 use DS\Constants\Services;
 use DS\Interfaces\GeneralApplication;
 use Phalcon\Cli\Console;
-use Phalcon\Config;
+use Phalcon\Config\Config;
 use Phalcon\Di\DiInterface;
 use Phalcon\Events\ManagerInterface;
-use Phalcon\Exception;
-use Phalcon\Logger;
+use Exception;
+use Phalcon\Logger\Logger;
 use Phalcon\Logger\Adapter\Stream as StreamAdapter;
 
 /**
@@ -110,9 +110,9 @@ class CliApplication
     }
     
     /**
-     * @return \Phalcon\Config
+     * @return \Phalcon\Config\Config
      */
-    public function getConfig(): \Phalcon\Config
+    public function getConfig(): \Phalcon\Config\Config
     {
         return $this->config;
     }
@@ -227,7 +227,7 @@ class CliApplication
     }
     
     /**
-     * @return Logger\Multiple
+     * @return Logger
      */
     public function getLogger()
     {
@@ -454,7 +454,7 @@ class CliApplication
             $this->handle($args);
             
         }
-        catch (\Phalcon\Exception $exception)
+        catch (\Exception $exception)
         {
             $exit = 1;
             //echo $exception->getMessage();

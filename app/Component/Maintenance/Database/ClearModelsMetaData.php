@@ -22,7 +22,7 @@ class ClearModelsMetaData extends \DS\Component\DiInjection implements Maintenan
     
     /**
      * @return bool
-     * @throws \Phalcon\Exception
+     * @throws \Exception
      */
     public function execute(): bool
     {

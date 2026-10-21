@@ -2,7 +2,7 @@
 namespace DS\Component\Filesystem;
 
 use DS\Exceptions\FileNotFoundException;
-use Phalcon\Exception;
+use Exception;
 
 /**
  * DS-Framework

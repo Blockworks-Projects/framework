@@ -87,7 +87,7 @@ return function (\DS\Interfaces\GeneralApplication $application, Phalcon\Di\Fact
             
             $adapter = $adapterFactory->newInstance('apcu', $options);
             
-            return new \Phalcon\Cache($adapter);
+            return new \Phalcon\Cache\Cache($adapter);
         }
     );
     

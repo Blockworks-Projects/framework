@@ -11,7 +11,7 @@ use DS\Exceptions\FormValidationException;
 use DS\Exceptions\PermissionDeniedException;
 use DS\Exceptions\RuntimeException;
 use DS\Exceptions\UserBlockedException;
-use Phalcon\Exception;
+use Exception;
 use Phalcon\Mvc\Controller as PhalconMvcController;
 
 /**
@@ -94,7 +94,7 @@ abstract class BaseController
      * @param int $lifetime
      *
      * @return bool
-     * @throws \Phalcon\Exception
+     * @throws \Exception
      */
     protected function cached(int $lifetime = 120): bool
     {
@@ -155,7 +155,7 @@ abstract class BaseController
      * @param ValidationSchema $schema
      * @param bool             $throwException
      *
-     * @return \Phalcon\Validation\Message\Group
+     * @return \Phalcon\Messages\Messages
      * @throws FormValidationException
      */
     protected function validate(ValidationSchema $schema, bool $throwException = false)
@@ -168,7 +168,7 @@ abstract class BaseController
      * @param ValidationSchema $schema
      * @param bool             $throwException
      *
-     * @return \Phalcon\Validation\Message\Group
+     * @return \Phalcon\Messages\Messages
      * @throws FormValidationException
      */
     protected function validateData(array $data, ValidationSchema $schema, bool $throwException = false)

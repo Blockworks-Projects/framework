@@ -22,7 +22,7 @@ trait EventsAwareTrait
     /**
      * @var ?ManagerInterface
      */
-    protected $eventsManager;
+    protected ?ManagerInterface $eventsManager = null;
     
     /**
      * Returns events manager instance

@@ -2,7 +2,7 @@
 
 namespace DS\Controller\Validation;
 
-use Phalcon\Validation;
+use Phalcon\Filter\Validation;
 
 /**
  * Dennis Stücken
@@ -27,7 +27,7 @@ interface ValidationSchema
      *
      * @param array|object $data
      * @param object $entity
-     * @return \Phalcon\Validation\Message\Group
+     * @return \Phalcon\Messages\Messages
      */
     public function validate($data = null, $entity = null);
 }

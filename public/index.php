@@ -19,7 +19,7 @@
 include_once('../vendor/autoload.php');
 
 // Do App Initialization
-\DS\Initializer::boot(new \Phalcon\Config(include __DIR__ . '/../app/config/Config.php'));
+\DS\Initializer::boot(new \Phalcon\Config\Config(include __DIR__ . '/../app/config/Config.php'));
 
 // Handle request
 \DS\Initializer::handleRequest();

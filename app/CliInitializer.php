@@ -3,12 +3,12 @@
 namespace DS;
 
 use DS\CliApplication as Application;
-use Phalcon\Config;
-use Phalcon\DI\FactoryDefault;
+use Phalcon\Config\Config;
+use Phalcon\Di\FactoryDefault;
 use Phalcon\Di\FactoryDefault\Cli;
 use Phalcon\Events\Manager;
 use Phalcon\Http\Response;
-use Phalcon\Loader;
+use Phalcon\Autoload\Loader;
 
 final class CliInitializer
 {

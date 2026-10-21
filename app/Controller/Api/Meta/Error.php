@@ -44,6 +44,7 @@ final class Error implements \JsonSerializable
     /**
      * Json serializer
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
         return [

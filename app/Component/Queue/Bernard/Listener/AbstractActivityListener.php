@@ -6,7 +6,7 @@ use Bernard\Message;
 use Bernard\Receiver;
 use DS\Component\Queue\ListenerInterface;
 use DS\Component\Queue\TriggerInterface;
-use Phalcon\Di;
+use Phalcon\Di\Di;
 use Phalcon\Di\Injectable;
 
 /**
@@ -118,9 +118,9 @@ abstract class AbstractActivityListener extends Injectable implements ListenerIn
     /**
      * DiInjection constructor.
      *
-     * @param Di|\Phalcon\DiInterface $dependencyInjector
+     * @param Di|\Phalcon\Di\DiInterface $dependencyInjector
      */
-    public function __construct(Di $dependencyInjector = null)
+    public function __construct(?Di $dependencyInjector = null)
     {
         $this->setDI($dependencyInjector);
         $this->initialize();

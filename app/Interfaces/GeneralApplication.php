@@ -2,9 +2,9 @@
 
 namespace DS\Interfaces;
 
-use Phalcon\Config;
-use Phalcon\Di;
-use Phalcon\Logger;
+use Phalcon\Config\Config;
+use Phalcon\Di\Di;
+use Phalcon\Logger\Logger;
 
 /**
  * DS-Framework

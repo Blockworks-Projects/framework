@@ -8,12 +8,12 @@ use DS\Constants\Services;
 use DS\Exceptions\UserNoAccessException;
 use DS\Interfaces\GeneralApplication;
 use DS\Traits\EventsAwareTrait;
-use Phalcon\Config;
+use Phalcon\Config\Config;
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Events\EventsAwareInterface;
 use Phalcon\Events\ManagerInterface;
-use Phalcon\Exception;
-use Phalcon\Logger;
+use Exception;
+use Phalcon\Logger\Logger;
 use Phalcon\Mvc\Application as PhalconApplication;
 
 /**
@@ -49,12 +49,12 @@ class Application
     protected $rootDirectory;
     
     /**
-     * @var \Phalcon\Config
+     * @var \Phalcon\Config\Config
      */
     protected $config = null;
     
     /**
-     * @var Logger\Adapter
+     * @var Logger
      */
     protected $logger = null;
     
@@ -86,9 +86,9 @@ class Application
     }
     
     /**
-     * @return \Phalcon\Config
+     * @return \Phalcon\Config\Config
      */
-    public function getConfig(): \Phalcon\Config
+    public function getConfig(): \Phalcon\Config\Config
     {
         return $this->config;
     }
@@ -128,7 +128,7 @@ class Application
             $di->set(
                 Services::DEBUG,
                 function () {
-                    return (new \Phalcon\Debug())->listen()->listenExceptions()->listenLowSeverity();
+                    return (new \Phalcon\Support\Debug())->listen()->listenExceptions()->listenLowSeverity();
                 }
             );
             
@@ -249,7 +249,7 @@ class Application
     /**
      * Prevent cloning
      */
-    final private function __clone()
+    private function __clone()
     {
     }
     

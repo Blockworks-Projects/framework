@@ -2,7 +2,7 @@
 
 namespace DS\Controller;
 
-use Phalcon\Exception;
+use Exception;
 
 /**
  * DS-Framework

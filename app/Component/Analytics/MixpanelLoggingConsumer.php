@@ -3,8 +3,8 @@
 namespace DS\Component\Analytics;
 
 use DS\Application;
-use Phalcon\Exception;
-use Phalcon\Logger;
+use Exception;
+use Phalcon\Logger\Logger;
 
 /**
  * DS-Framework

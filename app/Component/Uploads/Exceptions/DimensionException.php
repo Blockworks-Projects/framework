@@ -2,7 +2,7 @@
 
 namespace DS\Component\Uploads\Exceptions;
 
-use Phalcon\Exception;
+use Exception;
 
 /**
  * DS-Framework

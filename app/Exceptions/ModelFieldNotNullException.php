@@ -3,7 +3,7 @@
 namespace DS\Exceptions;
 
 use DS\Model\Base;
-use Phalcon\Exception;
+use Exception;
 use Throwable;
 
 /**

@@ -4,6 +4,7 @@
   "license": "proprietary",
   "type": "library",
   "minimum-stability": "dev",
+  "prefer-stable": true,
   "authors": [
     {
       "name": "Dennis Stücken <hi@dvlpr.de>"
@@ -11,70 +12,52 @@
   ],
   "homepage": "https://www.dvlpr.de",
   "require": {
-    "php": ">=7.3",
-    "ext-psr": "*",
-    "ext-phalcon": ">=4.0.0",
+    "php": "^8.4.1",
+    "ext-phalcon": "^5.23",
     "ext-json": "*",
     "ext-pdo": "*",
     "ext-posix": "*",
     "ext-redis": ">=2.2",
-    "predis/predis": "~0.8",
-    "phalcon/incubator": "^4.0",
-    "phalcon/migrations": "1.2.*",
+    "phalcon/migrations": "^3.0",
     "khill/php-duration": "^1.1",
     "php-http/httplug": "^2.1",
     "php-http/curl-client": "^2.2",
     "php-http/message": "^1.8",
     "guzzlehttp/guzzle": "~7.4",
-    "guzzlehttp/psr7": "^1.7",
+    "guzzlehttp/psr7": "^2.0",
     "kevinrob/guzzle-cache-middleware": "^4.0",
     "aws/aws-sdk-php": "^3.225",
-    "symfony/options-resolver": "^3.4",
-    "sentry/sentry": "3.*",
-    "league/flysystem": "2.*",
-    "league/flysystem-aws-s3-v3": "^2.1",
+    "sentry/sentry": "^4.0",
+    "league/flysystem": "^3.35.3",
+    "league/flysystem-aws-s3-v3": "^3.0",
     "league/csv": "9.7.*",
     "gumlet/php-image-resize": "^2.0",
     "rollbackpt/url-extractor": "^1.0",
     "mixpanel/mixpanel-php": "2.*",
     "hashids/hashids": "4.*",
-    "swiftmailer/swiftmailer": "6.2.*",
-    "sendgrid/sendgrid": "8.*",
     "vlucas/phpdotenv": "5.4.*",
     "ramsey/uuid": "4.*",
     "orangesoft/throttler": "1.*",
     "psr/http-message": "1.*",
     "caseyamcl/guzzle_retry_middleware": "2.*",
     "erusev/parsedown": "dev-master",
-    "http-interop/http-factory-guzzle": "dev-master"
+    "http-interop/http-factory-guzzle": "dev-master",
+    "symfony/var-dumper": "^7.3",
+    "symfony/finder": "^7.3"
   },
   "autoload": {
     "psr-4": {
       "DS\\": "app/"
     }
   },
-  "provide": {
-    "psr/log": "^1",
-    "psr/cache": "^1",
-    "psr/container": "^1",
-    "psr/link": "^1",
-    "psr/event-dispatcher": "^1",
-    "psr/http-server-handler": "^1",
-    "psr/http-server-middleware": "^1",
-    "psr/simple-cache": "^1",
-    "psr/http-factory": "^1",
-    "psr/http-client": "^1"
-  },
   "require-dev": {
     "roave/security-advisories": "dev-master",
     "whoops/phalcon": "2.*",
-    "phpunit/phpunit": "^7",
-    "phpunit/php-timer": "^2",
-    "phalcon/ide-stubs": "4.0.6",
-    "phpmd/phpmd" : "@stable",
+    "phpunit/phpunit": "^11",
+    "phalcon/ide-stubs": "^5.23",
+    "phpmd/phpmd": "@stable",
     "mi-schi/phpmd-extension": "dev-master",
-    "squizlabs/php_codesniffer": "*",
-    "phalcon/devtools": "4.0.*"
+    "squizlabs/php_codesniffer": "*"
   },
   "config": {
     "bin-dir": "bin",

@@ -2,8 +2,8 @@
 
 namespace DS\Controller;
 
-use Phalcon\Exception;
-use Phalcon\Logger;
+use Exception;
+use Phalcon\Logger\Logger;
 
 /**
  * DS

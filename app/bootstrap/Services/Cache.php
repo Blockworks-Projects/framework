@@ -22,7 +22,7 @@ return function (\DS\Interfaces\GeneralApplication $application, Phalcon\Di\Fact
      *
      * if (!isset($config['memcache']))
      * {
-     * throw new \Phalcon\Exception('Error. Memcache service is used but there is no configuration.');
+     * throw new \Exception('Error. Memcache service is used but there is no configuration.');
      * }
      *
      * return new \DS\Component\Cache\Memcache(
@@ -43,13 +43,14 @@ return function (\DS\Interfaces\GeneralApplication $application, Phalcon\Di\Fact
 
             if (!isset($config['redis']))
             {
-                throw new \Phalcon\Exception('Error. Invalid redis configuration.');
+                throw new \Exception('Error. Invalid redis configuration.');
             }
 
             return new \DS\Component\Cache\Redis(
                 [
                     "lifetime" => \DS\Model\Helper\Seconds::DaysOne,
-                    "prefix" => $config['redis']['prefix'] ?? "fw.cache." . APP_VERSION . ".",
+                    // Phalcon's version is part of the key so an upgrade never reads entries an older Phalcon wrote
+                    "prefix" => ($config['redis']['prefix'] ?? "fw.cache." . APP_VERSION . ".") . phpversion('phalcon') . ".",
                     'host' => $config['redis']['host'] ?? 'localhost',
                     'port' => $config['redis']['port'],
                     'index' => $config['redis']['index'] ?? null,
@@ -107,7 +108,7 @@ return function (\DS\Interfaces\GeneralApplication $application, Phalcon\Di\Fact
                     'port' => $config['redis']['port'],
                     'auth' => $config['redis']['auth'] ?? null,
                     "lifetime" => \DS\Model\Helper\Seconds::WeeksOne,
-                    "prefix" => $config['redis']['prefix'] ?? "fw." . APP_VERSION . ".metadata.",
+                    "prefix" => ($config['redis']['prefix'] ?? "fw." . APP_VERSION . ".metadata.") . phpversion('phalcon') . ".",
                     'index' => $config['redis']['index'] ?? null,
                 ]
             );
