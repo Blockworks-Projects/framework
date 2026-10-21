@@ -22,7 +22,8 @@ return function (\DS\Interfaces\GeneralApplication $application, Phalcon\Di\Fact
         {
             $config = $application->getConfig();
 
-            $crypt = new Crypt();
+            // Phalcon 4 did not sign by default; Phalcon 5 does
+            $crypt = new Crypt('aes-256-cfb', false);
             $crypt->setKey($config['crypt']['key']);
 
             return $crypt;

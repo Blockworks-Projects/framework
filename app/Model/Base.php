@@ -382,6 +382,12 @@ abstract class Base
      */
     public function getRelated($alias, $arguments = null)
     {
+        // Phalcon's magic relation properties call this without arguments
+        if ($arguments === null)
+        {
+            return parent::getRelated($alias);
+        }
+
         return parent::getRelated(
             $alias,
             array_merge_recursive(

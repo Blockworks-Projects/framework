@@ -50,7 +50,7 @@ return function (\DS\Interfaces\GeneralApplication $application, Phalcon\Di\Fact
                 [
                     "lifetime" => \DS\Model\Helper\Seconds::DaysOne,
                     // Phalcon's version is part of the key so an upgrade never reads entries an older Phalcon wrote
-                    "prefix" => $config['redis']['prefix'] ?? "fw.cache." . APP_VERSION . "." . phpversion('phalcon') . ".",
+                    "prefix" => ($config['redis']['prefix'] ?? "fw.cache." . APP_VERSION . ".") . phpversion('phalcon') . ".",
                     'host' => $config['redis']['host'] ?? 'localhost',
                     'port' => $config['redis']['port'],
                     'index' => $config['redis']['index'] ?? null,
@@ -108,7 +108,7 @@ return function (\DS\Interfaces\GeneralApplication $application, Phalcon\Di\Fact
                     'port' => $config['redis']['port'],
                     'auth' => $config['redis']['auth'] ?? null,
                     "lifetime" => \DS\Model\Helper\Seconds::WeeksOne,
-                    "prefix" => $config['redis']['prefix'] ?? "fw." . APP_VERSION . "." . phpversion('phalcon') . ".metadata.",
+                    "prefix" => ($config['redis']['prefix'] ?? "fw." . APP_VERSION . ".metadata.") . phpversion('phalcon') . ".",
                     'index' => $config['redis']['index'] ?? null,
                 ]
             );
