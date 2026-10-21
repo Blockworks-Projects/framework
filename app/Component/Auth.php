@@ -3,9 +3,11 @@
 namespace DS\Component;
 
 use DS\Traits\EventsAwareTrait;
+use Phalcon\Di\Di;
 use Phalcon\Di\AbstractInjectionAware;
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Events\EventsAwareInterface;
+use Phalcon\Events\Manager;
 use Phalcon\Encryption\Security;
 use Phalcon\Session\ManagerInterface;
 

@@ -4,6 +4,7 @@ namespace DS\Traits;
 
 use Phalcon\Events\Manager;
 use Phalcon\Events\ManagerInterface;
+use Phalcon\Logger\AdapterInterface;
 
 /**
  * DS-Framework Application

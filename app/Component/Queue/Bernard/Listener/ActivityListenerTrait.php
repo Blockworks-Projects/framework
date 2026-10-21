@@ -2,6 +2,8 @@
 
 namespace DS\Component\Queue\Bernard\Listener;
 
+use DS\Component\Queue\TriggerInterface;
+
 /**
  * DS-Framework
  *

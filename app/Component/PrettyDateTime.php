@@ -1,6 +1,8 @@
 <?php
 namespace DS\Component;
 
+use DS\Application;
+
 /**
  * DS-Framework
  *

@@ -6,6 +6,7 @@ use Guzzle\Http\Client;
 use Guzzle\Http\Exception\RequestException;
 use Guzzle\Http\Message\Response;
 use Phalcon\Di\Di;
+use Phalcon\Session\Adapter as SessionAdapter;
 
 /**
  * DS-Framework

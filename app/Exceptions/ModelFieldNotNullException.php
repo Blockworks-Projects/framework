@@ -2,6 +2,10 @@
 
 namespace DS\Exceptions;
 
+use DS\Model\Base;
+use Exception;
+use Throwable;
+
 /**
  * DS-Framework
  *

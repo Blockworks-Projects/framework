@@ -3,6 +3,7 @@
 namespace DS\Component\Phql\SqlDialects;
 
 use DS\Component\Phql\SqlDialect;
+use Phalcon\Db\Adapter\Pdo\MySQL as Connection;
 
 /**
  * DS-Framework
