@@ -103,7 +103,7 @@ abstract class AbstractImage
                 return '';
             }
             
-            $response      = (new Client(['verify' => false]))->get($imageUrl);
+            $response      = (new Client(['verify' => false, 'timeout' => 30, 'connect_timeout' => 30]))->get($imageUrl);
             $imageContents = (string) $response->getBody();
             
             $imageData = 'data://' . $response->getHeaderLine('Content-Type') . ';base64,' . base64_encode($imageContents);

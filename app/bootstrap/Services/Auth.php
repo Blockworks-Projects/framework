@@ -17,7 +17,7 @@ return function (\DS\Interfaces\GeneralApplication $application, Phalcon\Di\Fact
             {
                 return new \DS\Component\Auth($di);
             }
-            catch (\Phalcon\Exception $e)
+            catch (\Exception $e)
             {
                 die($e->getMessage());
             }
