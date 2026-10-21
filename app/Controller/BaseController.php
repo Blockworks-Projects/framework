@@ -102,17 +102,17 @@ abstract class BaseController
         {
             return false;
         }
-
+        
         // todo: Caching currently not implemented.
         return false;
-
+        
         /*
         $viewCache = $this->serviceManager->getViewCache();
         $cacheKey  = $this->getCacheKey();
         if ($viewCache->has($cacheKey))
         {
             $viewCache->get($cacheKey);
-
+            
             return true;
         }
         else
@@ -125,7 +125,7 @@ abstract class BaseController
                 "key" => $this->getCacheKey(),
             ]
         );
-
+        
         return $this->view->getCache()->exists($this->getCacheKey());
         */
     }

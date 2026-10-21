@@ -224,7 +224,7 @@ class Application
             ob_start();
             debug_print_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
             $trace = ob_get_clean();
-
+            
             // $this->serviceManager->getSlack()->sendErrorMessage($message . ' - ' . "\nTrace:\n" . $trace);
             // $this->serviceManager->getMixpanel()->track('Error', ['message' => $message, 'trace' => $trace]);
         }
