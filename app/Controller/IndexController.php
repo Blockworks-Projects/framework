@@ -2,7 +2,8 @@
 
 namespace DS\Controller;
 
-use DS\Exceptions\RuntimeException;
+use Exception;
+use Phalcon\Logger\Logger;
 
 /**
  * DS
@@ -17,11 +18,16 @@ class IndexController
 {
     /**
      * Home
-     *
-     * @throws RuntimeException
      */
     public function indexAction()
     {
-        throw new RuntimeException('Override the IndexController for the index route "/".');
+        try
+        {
+            die("Override the IndexController for the index route \"/\".");
+        }
+        catch (Exception $e)
+        {
+            application()->log($e->getMessage(), Logger::CRITICAL);
+        }
     }
 }

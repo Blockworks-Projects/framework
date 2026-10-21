@@ -278,15 +278,22 @@ abstract class BaseController
             {
                 $this->verifyCsrfToken();
             }
-            catch (CsrfTokenMismatchException|CsrfTokenMissingException $e)
+            catch (CsrfTokenMismatchException $e)
             {
                 sentryException($e);
                 $this->flashSession->error($e->getMessage());
-
-                return $this->response->redirect(HomeLink::get($this->request->getURI()));
+                header('Location: ' . HomeLink::get($this->request->getURI()));
+                die;
+            }
+            catch (CsrfTokenMissingException $e)
+            {
+                sentryException($e);
+                $this->flashSession->error($e->getMessage());
+                header('Location: ' . HomeLink::get($this->request->getURI()));
+                die;
             }
         }
-
+        
         return $this;
     }
 }

@@ -62,16 +62,14 @@ abstract class Response extends DiInjection
     }
 
     /**
-     * Send the response to the client.
-     *
      * @return HttpResponse
      */
-    public function send(): HttpResponse
+    public function send()
     {
         $this->setResponseType();
         $this->response->send();
 
-        return $this->response;
+        die;
     }
 
     /**

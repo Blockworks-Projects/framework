@@ -13,7 +13,14 @@ return function (\DS\Interfaces\GeneralApplication $application, Phalcon\Di\Fact
     $di->setShared(
         \DS\Constants\Services::AUTH,
         function () use ($di) {
-            return new \DS\Component\Auth($di);
+            try
+            {
+                return new \DS\Component\Auth($di);
+            }
+            catch (\Exception $e)
+            {
+                die($e->getMessage());
+            }
         }
     );
 };
