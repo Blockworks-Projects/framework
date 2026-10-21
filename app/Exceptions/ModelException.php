@@ -3,7 +3,7 @@
 namespace DS\Exceptions;
 
 use DS\Model\Base;
-use Phalcon\Exception;
+use Exception;
 use Throwable;
 
 /**
@@ -40,7 +40,7 @@ class ModelException extends Exception
      * @param int            $code
      * @param Throwable|null $previous
      */
-    public function __construct(Base $model, string $message = "", int $code = 0, Throwable $previous = null)
+    public function __construct(Base $model, string $message = "", int $code = 0, ?Throwable $previous = null)
     {
         parent::__construct($message, $code, $previous);
         

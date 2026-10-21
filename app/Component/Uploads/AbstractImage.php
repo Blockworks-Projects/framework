@@ -5,8 +5,8 @@ namespace DS\Component\Uploads;
 use DS\Component\Filesystem\Flysystem\DsFlysystemAdapterInterface;
 use DS\Component\Images\Extensions;
 use DS\Component\Images\ImageResize;
-use Phalcon\Http\Client\Provider\Curl;
-use Phalcon\Logger;
+use GuzzleHttp\Client;
+use Phalcon\Logger\Logger;
 
 /**
  * DS-Framework
@@ -103,19 +103,10 @@ abstract class AbstractImage
                 return '';
             }
             
-            $curl = new Curl();
-            $curl->setOptions(
-                [
-                    CURLOPT_HEADER => 0,
-                    CURLOPT_FOLLOWLOCATION => 1,
-                    CURLOPT_SSL_VERIFYHOST => 0,
-                    CURLOPT_SSL_VERIFYPEER => 0,
-                ]
-            );
-            $curlResponse  = $curl->get($imageUrl);
-            $imageContents = $curlResponse->body;
+            $response      = (new Client(['verify' => false]))->get($imageUrl);
+            $imageContents = (string) $response->getBody();
             
-            $imageData = 'data://' . $curlResponse->header->get('Content-Type') . ';base64,' . base64_encode($imageContents);
+            $imageData = 'data://' . $response->getHeaderLine('Content-Type') . ';base64,' . base64_encode($imageContents);
             
             // Resize to 900 which will be the default image size
             $imageName = $this->writeImage(

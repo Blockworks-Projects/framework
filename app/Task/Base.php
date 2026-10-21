@@ -173,7 +173,7 @@ abstract class Base
     }
     
     /**
-     * @throws \Phalcon\Exception
+     * @throws \Exception
      */
     public function initialize()
     {

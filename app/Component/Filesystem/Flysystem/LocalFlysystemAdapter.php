@@ -2,7 +2,7 @@
 
 namespace DS\Component\Filesystem\Flysystem;
 
-use League\Flysystem\Adapter\Local;
+use League\Flysystem\Local\LocalFilesystemAdapter;
 
 /**
  * DS-Framework
@@ -15,7 +15,7 @@ use League\Flysystem\Adapter\Local;
  * @version   $Version$
  * @package   DS\Component\Filesystem
  */
-class LocalFlysystemAdapter extends Local implements DsFlysystemAdapterInterface
+class LocalFlysystemAdapter extends LocalFilesystemAdapter implements DsFlysystemAdapterInterface
 {
     use WebPathTrait, DefaultConfigTrait;
 

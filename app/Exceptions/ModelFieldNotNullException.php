@@ -2,10 +2,6 @@
 
 namespace DS\Exceptions;
 
-use DS\Model\Base;
-use Phalcon\Exception;
-use Throwable;
-
 /**
  * DS-Framework
  *

@@ -2,8 +2,8 @@
 
 namespace DS\Task\TaskHelpers;
 
-use Phalcon\Logger;
-use Phalcon\Logger\Adapter\File;
+use Phalcon\Logger\Adapter\Stream;
+use Phalcon\Logger\Logger;
 
 /**
  * DS-Framework
@@ -31,13 +31,16 @@ trait LoggerTrait
      *
      * @param $path
      */
-    protected function initLogger($path = '/tmp/task-log', $level = LOGGER::INFO)
+    protected function initLogger($path = '/tmp/task-log', $level = Logger::INFO)
     {
         // Initialize logging instance
-        //$this->logger = new File($path);
-        $this->logger = new Logger\Adapter\Stream(
-            $path, [
-                'mode' => 'ab',
+        $this->logger = new Logger(
+            'task', [
+                'main' => new Stream(
+                    $path, [
+                        'mode' => 'ab',
+                    ]
+                ),
             ]
         );
         

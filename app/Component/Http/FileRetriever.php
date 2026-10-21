@@ -5,8 +5,7 @@ use DS\Component\DiInjection;
 use Guzzle\Http\Client;
 use Guzzle\Http\Exception\RequestException;
 use Guzzle\Http\Message\Response;
-use Phalcon\Di;
-use Phalcon\Session\Adapter as SessionAdapter;
+use Phalcon\Di\Di;
 
 /**
  * DS-Framework
@@ -84,7 +83,7 @@ class FileRetriever extends DiInjection
      *
      * @return static
      */
-    public static function instance(Di $dependencyInjector = null)
+    public static function instance(?Di $dependencyInjector = null)
     {
         if (!static::$instance)
         {
@@ -97,9 +96,9 @@ class FileRetriever extends DiInjection
     /**
      * DiInjection constructor.
      *
-     * @param Di|\Phalcon\DiInterface $dependencyInjector
+     * @param Di|\Phalcon\Di\DiInterface $dependencyInjector
      */
-    public function __construct(Di $dependencyInjector = null)
+    public function __construct(?Di $dependencyInjector = null)
     {
         parent::__construct($dependencyInjector);
 

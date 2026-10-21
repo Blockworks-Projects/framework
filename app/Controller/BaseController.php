@@ -8,10 +8,9 @@ use DS\Controller\Validation\ValidationSchema;
 use DS\Exceptions\CsrfTokenMismatchException;
 use DS\Exceptions\CsrfTokenMissingException;
 use DS\Exceptions\FormValidationException;
-use DS\Exceptions\PermissionDeniedException;
 use DS\Exceptions\RuntimeException;
 use DS\Exceptions\UserBlockedException;
-use Phalcon\Exception;
+use Exception;
 use Phalcon\Mvc\Controller as PhalconMvcController;
 
 /**
@@ -94,7 +93,7 @@ abstract class BaseController
      * @param int $lifetime
      *
      * @return bool
-     * @throws \Phalcon\Exception
+     * @throws \Exception
      */
     protected function cached(int $lifetime = 120): bool
     {
@@ -102,17 +101,17 @@ abstract class BaseController
         {
             return false;
         }
-        
+
         // todo: Caching currently not implemented.
         return false;
-        
+
         /*
         $viewCache = $this->serviceManager->getViewCache();
         $cacheKey  = $this->getCacheKey();
         if ($viewCache->has($cacheKey))
         {
             $viewCache->get($cacheKey);
-            
+
             return true;
         }
         else
@@ -125,7 +124,7 @@ abstract class BaseController
                 "key" => $this->getCacheKey(),
             ]
         );
-        
+
         return $this->view->getCache()->exists($this->getCacheKey());
         */
     }
@@ -155,7 +154,7 @@ abstract class BaseController
      * @param ValidationSchema $schema
      * @param bool             $throwException
      *
-     * @return \Phalcon\Validation\Message\Group
+     * @return \Phalcon\Messages\Messages
      * @throws FormValidationException
      */
     protected function validate(ValidationSchema $schema, bool $throwException = false)
@@ -168,7 +167,7 @@ abstract class BaseController
      * @param ValidationSchema $schema
      * @param bool             $throwException
      *
-     * @return \Phalcon\Validation\Message\Group
+     * @return \Phalcon\Messages\Messages
      * @throws FormValidationException
      */
     protected function validateData(array $data, ValidationSchema $schema, bool $throwException = false)

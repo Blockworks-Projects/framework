@@ -51,8 +51,8 @@ clearstatcache();
 require_once __DIR__ . '/../../vendor/autoload.php';
 $di = require_once(__DIR__ . '/../../app/bootstrap/Init.php');
 
-\Phalcon\Di::reset();
-\Phalcon\Di::setDefault($di);
+\Phalcon\Di\Di::reset();
+\Phalcon\Di\Di::setDefault($di);
 //\DS\Application::initialize($di);
 
 // require_once 'AbstractDSTester.php';

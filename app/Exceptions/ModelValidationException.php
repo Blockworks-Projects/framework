@@ -37,7 +37,7 @@ class ModelValidationException extends ModelException
      * @param int            $code
      * @param Throwable|null $previous
      */
-    public function __construct(Base $model, string $message = "", string $field = '', int $code = 0, Throwable $previous = null)
+    public function __construct(Base $model, string $message = "", string $field = '', int $code = 0, ?Throwable $previous = null)
     {
         parent::__construct($model, $message, $code, $previous);
 

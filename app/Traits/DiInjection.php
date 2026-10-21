@@ -56,7 +56,7 @@ trait DiInjection
      *
      * @param DiInterface $container
      */
-    public function __construct(DiInterface $container = null)
+    public function __construct(?DiInterface $container = null)
     {
         if ($container)
         {

@@ -19,9 +19,9 @@ namespace DS\Events;
 class AbstractEvent
 {
     /**
-     * @return \Phalcon\Di
+     * @return \Phalcon\Di\Di
      */
-    protected static function getDi(): \Phalcon\Di
+    protected static function getDi(): \Phalcon\Di\Di
     {
         return di();
     }

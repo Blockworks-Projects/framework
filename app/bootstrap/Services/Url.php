@@ -16,7 +16,7 @@ return function (\DS\Interfaces\GeneralApplication $application, Phalcon\Di\Fact
     $di->setShared(
         'url',
         function () use ($config) {
-            $url = new \Phalcon\Url();
+            $url = new \Phalcon\Mvc\Url();
             $url->setBaseUri($config->get('baseurl', '/'));
 
             return $url;

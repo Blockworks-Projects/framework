@@ -1,5 +1,5 @@
 <?php
-use Phalcon\Crypt;
+use Phalcon\Encryption\Crypt;
 
 /**
  * DS-Framework

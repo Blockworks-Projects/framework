@@ -2,7 +2,7 @@
 
 namespace DS\Component\Regex\Exceptions;
 
-use Phalcon\Exception;
+use Exception;
 
 /**
  * DS

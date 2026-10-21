@@ -4,7 +4,6 @@ namespace DS\Traits;
 
 use Phalcon\Events\Manager;
 use Phalcon\Events\ManagerInterface;
-use Phalcon\Logger\AdapterInterface;
 
 /**
  * DS-Framework Application
@@ -22,7 +21,7 @@ trait EventsAwareTrait
     /**
      * @var ?ManagerInterface
      */
-    protected $eventsManager;
+    protected ?ManagerInterface $eventsManager = null;
     
     /**
      * Returns events manager instance

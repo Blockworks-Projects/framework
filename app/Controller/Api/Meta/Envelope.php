@@ -29,6 +29,7 @@ final class Envelope implements \JsonSerializable
     /**
      * Json serializer
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
         return [

@@ -3,7 +3,6 @@
 namespace DS\Component\Http;
 
 use DS\Exceptions\RuntimeException;
-use DS\Model\NftCollection;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\HandlerStack;

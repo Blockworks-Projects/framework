@@ -3,7 +3,6 @@ namespace DS\Component;
 
 use DS\Component\Intl\NativeArray;
 use Phalcon\Di\AbstractInjectionAware;
-use Phalcon\Http\Request;
 
 /**
  * DS-Framework

@@ -135,6 +135,7 @@ final class Records extends RecordBase implements ArrayAccess, Countable, JsonSe
      * The return value will be casted to boolean if non-boolean was returned.
      * @since 5.0.0
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->data[$offset]);
@@ -152,6 +153,7 @@ final class Records extends RecordBase implements ArrayAccess, Countable, JsonSe
      * @return mixed Can return all value types.
      * @since 5.0.0
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->data[$offset];
@@ -172,6 +174,7 @@ final class Records extends RecordBase implements ArrayAccess, Countable, JsonSe
      * @return void
      * @since 5.0.0
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         $this->data[$offset] = $value;
@@ -189,6 +192,7 @@ final class Records extends RecordBase implements ArrayAccess, Countable, JsonSe
      * @return void
      * @since 5.0.0
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->data[$offset]);

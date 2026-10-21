@@ -13,11 +13,11 @@ if (!function_exists('di'))
     /**
      * @param null $service
      *
-     * @return \Phalcon\DiInterface
+     * @return \Phalcon\Di\DiInterface
      */
     function di($service = null)
     {
-        $default = \Phalcon\Di::getDefault();
+        $default = \Phalcon\Di\Di::getDefault();
         
         if ($service !== null)
         {

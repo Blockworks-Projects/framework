@@ -5,8 +5,8 @@ namespace DS\Model;
 use DS\Component\Cache\Redis;
 use DS\Component\ServiceManager;
 use Phalcon\Db\ResultInterface;
-use Phalcon\Di;
-use Phalcon\Escaper;
+use Phalcon\Di\Di;
+use Phalcon\Html\Escaper;
 
 /**
  * DS-Framework
@@ -93,7 +93,7 @@ abstract class Base
      *
      * @return bool
      */
-    public function deleteByFieldValue(string $column = 'id', string $id): bool
+    public function deleteByFieldValue(string $column, string $id): bool
     {
         return $this->getWriteConnection()->delete($this->getSource(), sprintf("%s = ?", $column), [$id]);
     }
@@ -290,7 +290,7 @@ abstract class Base
      * Still unsure about this feature
      * It's maybe better implemented via Decorator Pattern for the Query-Builder
      *
-    protected function applyLimit(Limit $limit = null)
+    protected function applyLimit(?Limit $limit = null)
     {
         if ($limit)
         {
@@ -446,7 +446,7 @@ abstract class Base
      *
      * @return static
      */
-    public static function factory(Di $di = null)
+    public static function factory(?Di $di = null)
     {
         return new static($di);
     }

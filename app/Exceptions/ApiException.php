@@ -3,7 +3,7 @@
 namespace DS\Exceptions;
 
 use DS\Application;
-use Phalcon\Exception;
+use Exception;
 
 /**
  * Coders

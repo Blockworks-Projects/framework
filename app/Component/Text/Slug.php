@@ -2,7 +2,7 @@
 
 namespace DS\Component\Text;
 
-use Phalcon\Exception;
+use Exception;
 
 /**
  * Slug component

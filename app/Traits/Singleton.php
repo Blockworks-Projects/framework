@@ -38,15 +38,14 @@ trait Singleton
         return static::$instance[$l_class];
     }
 
-    /** @noinspection PhpUnusedPrivateMethodInspection */
-    final private function __wakeup()
+    public function __wakeup()
     {
     }
 
     /**
      * Prevent cloning
      */
-    final private function __clone()
+    private function __clone()
     {
     }
 }

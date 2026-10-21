@@ -18,7 +18,7 @@ return function (\DS\Interfaces\GeneralApplication $application, Phalcon\Di\Fact
                 touch(ROOT_PATH . 'system/log/error');
             }
             
-            return new Phalcon\Logger(
+            return new Phalcon\Logger\Logger(
                 "error", [
                 new \Phalcon\Logger\Adapter\Stream(ROOT_PATH . 'system/log/error'),
             ]
@@ -34,7 +34,7 @@ return function (\DS\Interfaces\GeneralApplication $application, Phalcon\Di\Fact
                 touch(ROOT_PATH . 'system/log/application');
             }
             
-            return new Phalcon\Logger(
+            return new Phalcon\Logger\Logger(
                 "application", [
                 new \Phalcon\Logger\Adapter\Stream(ROOT_PATH . 'system/log/application'),
             ]
@@ -50,7 +50,7 @@ return function (\DS\Interfaces\GeneralApplication $application, Phalcon\Di\Fact
                 touch(ROOT_PATH . 'system/log/cli');
             }
             
-            return new Phalcon\Logger(
+            return new Phalcon\Logger\Logger(
                 "application", [
                 new \Phalcon\Logger\Adapter\Stream(ROOT_PATH . 'system/log/cli'),
             ]
